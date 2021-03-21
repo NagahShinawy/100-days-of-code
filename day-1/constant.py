@@ -8,3 +8,5 @@ DIE_DICE = {
 }
 
 UNDER_AGE = 18
+NEWLINE = "\n"
+SPACE = "\t"

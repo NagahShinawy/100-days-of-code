@@ -2,8 +2,9 @@ from constant import DIE_DICE, UNDER_AGE
 from die_dice import Number
 
 
-number = Number(5)
-is_valid = number.is_valid()
+number = Number(2)
+# number = Number("4")
+# is_valid = number.is_valid()
 
 
 num = number.to_int()

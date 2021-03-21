@@ -1,0 +1,6 @@
+# problem : SyntaxError: EOL while scanning string literal
+# fix: missing " at the end of the string
+
+# ====================================
+# setter example to validate __init__ attributes
+@number.setter
