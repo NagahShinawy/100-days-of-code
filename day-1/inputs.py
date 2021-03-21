@@ -4,7 +4,7 @@ name = input("Enter Your Name? : ")
 
 print(name)
 
-names = [name.title() for name in input("Enter names separated by ,").split(',')]
+names = [name.title() for name in input("Enter names separated by ,").split(",")]
 
 print(names)
 
@@ -14,4 +14,3 @@ total = sum(degrees)
 
 print(degrees)
 print(total)
-
