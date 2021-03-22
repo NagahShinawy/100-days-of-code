@@ -46,3 +46,7 @@ print(len(name))
 print(is_odd(len(name)))
 print(count("test"))
 print(findlen("test"))
+
+print("#" * 20)
+
+print("Color:", len(input("Enter Your color: ")))
