@@ -1,6 +1,7 @@
 import uuid
-from contact import Contact
-from rating import Rate
+from contactus.contact import Contact
+from contactus.rating import Rate
+from utils.logs import logger
 
 
 class User:
@@ -15,9 +16,10 @@ class User:
         self.rates = []
 
     def send_message(self, reason, description):
+        logger.info("sending message ....")
         msg = Contact(reason=reason, description=description)
         self.save(msg)
-        print("Message Saved")
+        logger.info("message sent successfully")
 
     def save(self, payload):
         if isinstance(payload, Contact):
@@ -26,10 +28,14 @@ class User:
             self.rates.append(payload)
 
     def export_messages_to_txt(self):
+        logger.info("export messages to text ....")
         self._export_to_txt(self.messages, User.MSG)
+        logger.info("messages exported")
 
     def export_rates_to_txt(self):
+        logger.info("export rates to text ....")
         self._export_to_txt(self.rates, User.RATE)
+        logger.info("rates exported")
 
     def _export_to_txt(self, payload, rate_or_msg):
         with open(f"{self}[{rate_or_msg}].txt", "a") as f:
