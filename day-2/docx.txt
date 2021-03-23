@@ -1,0 +1,7 @@
+# todo : subscript means [] ==> like string[0]
+
+
+# todo : large integers
+
+nationalid = 12_354_365_734_512  # 12354365734512 ==>  python ignore _ to visualize number more easily
+print(nationalid)
