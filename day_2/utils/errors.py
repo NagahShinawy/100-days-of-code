@@ -1,2 +1,6 @@
-class NotFoundObj(Exception):
+class ObjNotFound(Exception):
+    pass
+
+
+class InsertError(Exception):
     pass
