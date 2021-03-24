@@ -64,7 +64,7 @@ class Category(CRUD, Export):
         return f"[{self.uuid}][{self.category_name}]"
 
 
-class User(CRUD):
+class User(CRUD, Export):
     def __init__(self, username, dob):
         self.uuid = uuid.uuid4()
         self.username = username

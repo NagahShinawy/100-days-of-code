@@ -18,12 +18,13 @@ class MainApp:
 
         # ########################################
         user = User(username="Nagah", dob="2000-03-09")
-        user2 = User(username="Ahmed", dob="2000-03-09")
-        User.insert(user)
-        User.update(user.uuid, user2)
-        print(User.objs)
-        User.delete(_id=user2.uuid)
-        print(User.objs)
+        user.to_json()
+        # user2 = User(username="Ahmed", dob="2000-03-09")
+        # User.insert(user)
+        # User.update(user.uuid, user2)
+        # print(User.objs)
+        # User.delete(_id=user2.uuid)
+        # print(User.objs)
 
 
 if __name__ == "__main__":
