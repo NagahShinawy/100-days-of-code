@@ -32,7 +32,7 @@ def getlen(string: str):
     if not str:
         return 0
     else:
-        some_random_str = 'py'  # 'tpyepyspyt' ==> if string=test
+        some_random_str = "py"  # 'tpyepyspyt' ==> if string=test
         return some_random_str.join(string).count(some_random_str) + 1
 
 

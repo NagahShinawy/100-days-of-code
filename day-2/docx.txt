@@ -5,3 +5,16 @@
 
 nationalid = 12_354_365_734_512  # 12354365734512 ==>  python ignore _ to visualize number more easily
 print(nationalid)
+
+# The ** operator in Python is used to raise the number on the left to the power of the exponent of the right
+
+############################################################################################################
+
+PEMDAS: PEMDASLR: measn PEMDAS LeftRight
+1- Parentheses ()
+2- Exponent **
+3- Multiplication *
+4- Division /
+5- Addition +
+6- Subtraction -
+

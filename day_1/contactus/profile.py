@@ -29,15 +29,15 @@ class User:
 
     def export_messages_to_txt(self):
         logger.info("export messages to text ....")
-        self._export_to_txt(self.messages, User.MSG)
+        self.__export_to_txt(self.messages, User.MSG)
         logger.info("messages exported")
 
     def export_rates_to_txt(self):
         logger.info("export rates to text ....")
-        self._export_to_txt(self.rates, User.RATE)
+        self.__export_to_txt(self.rates, User.RATE)
         logger.info("rates exported")
 
-    def _export_to_txt(self, payload, rate_or_msg):
+    def __export_to_txt(self, payload, rate_or_msg):
         with open(f"{self}[{rate_or_msg}].txt", "a") as f:
             for start, msg in enumerate(payload, start=1):
                 f.write(f"\n{start}-{msg}\n" + "#" * 30 + "\n")
