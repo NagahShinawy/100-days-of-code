@@ -4,3 +4,7 @@ class ObjNotFound(Exception):
 
 class InsertError(Exception):
     pass
+
+
+class ObjAlreadyExists(Exception):
+    pass
