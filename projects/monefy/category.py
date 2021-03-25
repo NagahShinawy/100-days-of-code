@@ -15,7 +15,7 @@ class IncomeCategory(Base):
 
 
 class ExpenseCategory(Base):
-    EXPENSE = (
+    EXPENSES = (
         "Bills",
         "Car",
         "Clothes",

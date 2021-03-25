@@ -1,3 +1,4 @@
+import uuid
 from projects.monefy.expense import Expense
 from projects.monefy.income import Income
 
@@ -7,6 +8,7 @@ class Account:
         self.incomes = 0
         self.expense = 0
         self.balance = 0
+        self.uuid = uuid.uuid4()
 
     def calc_expense(self, expense: Expense):
         if expense.value > self.balance:
