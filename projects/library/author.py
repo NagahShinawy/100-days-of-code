@@ -11,5 +11,12 @@ class Author:
         self.books.append(book)
         book.authors.append(self)
 
+    def to_json(self):
+        return {
+            "name": self.name,
+            "yoe": self.yoe,
+            "books": [book.to_json() for book in self.books],
+        }
+
     def __repr__(self):
         return f"<{self.name}>"
