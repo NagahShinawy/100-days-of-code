@@ -6,8 +6,8 @@ class Book:
 
     def to_json(self):
         return {
-            "name": self.title,
-            "yoe": self.price,
+            "title": self.title,
+            "price": self.price,
             "authors": [author.to_json() for author in self.authors],
         }
 
