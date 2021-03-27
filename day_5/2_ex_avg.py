@@ -9,7 +9,7 @@ for height in students_heights:
     length += 1
     total_heights += height
 
-avg = total_heights / length
+avg = round((total_heights / length), 2)
 print(students_heights)
 print(total_heights)
 print(length)
