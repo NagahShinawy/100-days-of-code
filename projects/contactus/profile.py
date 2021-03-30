@@ -1,7 +1,7 @@
 import uuid
-from contactus.contact import Contact
-from contactus.rating import Rate
-from utils.logs import logger
+from projects.contactus.contact import Contact
+from projects.contactus.rating import Rate
+from projects.utils.logs import logger
 
 
 class User:

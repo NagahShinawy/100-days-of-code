@@ -1,4 +1,4 @@
-from contactus.profile import User
+from projects.contactus.profile import User
 
 
 def main():
