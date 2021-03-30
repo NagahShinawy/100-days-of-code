@@ -1,30 +1,12 @@
 from random import choice
+from word_list import words
+from stages_list import stages
 
-words = ["python", "java", "php", "django", "rest"]
 word = choice(words)
 word_len = len(word)
 
 display = ["-"] * word_len
 print(display)
-stages = [
-    "o",
-    "o--",
-    """
-    o---
-        |
-        |
-    """,
-    """
-    o---
-     /\ |
-        |
-    """,
-    """
-       o---
-        /\ |
-        |  |
-       """,
-]
 
 
 def user_guess():
@@ -45,9 +27,10 @@ stage_index = 0
 while not end_of_game:
     g = user_guess()
     if "-" not in display:
-        print("".join(display))
+        print("You Win", "".join(display))
         end_of_game = True
     if g not in word:
+        print(f'"{g}" is not at word. You lose a life')
         lives -= 1
         print(stages[stage_index])
         stage_index += 1
