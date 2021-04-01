@@ -4,12 +4,12 @@ from string import ascii_lowercase
 def encrypt(plaintext: str, shift: int):
     encrypted_message = ""
     for char in plaintext:
-        index = ascii_lowercase.index(char) + shift  # shifted index
+        new_index = ascii_lowercase.index(char) + shift  # shifted index
         if (
-            index > len(ascii_lowercase) - 1
+            new_index > len(ascii_lowercase) - 1
         ):  # if char reach to the end , go back to start from beginning (a, b, ..)
-            index = index - len(ascii_lowercase)
-        encrypted_message += ascii_lowercase[index]
+            new_index = new_index - len(ascii_lowercase)
+        encrypted_message += ascii_lowercase[new_index]
     return encrypted_message
 
 
@@ -25,10 +25,7 @@ def decrypt(encrypted_text: str, shift: int):
     return original_message
 
 
-def main():
-    direction = input("Type 'encode' to encrypt or 'decode' to decrypt")
-    text = input("Type Yor message").lower()
-    shift = int(input("Type the shift number"))
+def caesar(text, shift, direction):
     if direction == "encode":
         print(encrypt(text, shift=shift))
     elif direction == "decode":
@@ -38,4 +35,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    direction = input("Type 'encode' to encrypt or 'decode' to decrypt")
+    text = input("Type Yor message").lower()
+    shift = int(input("Type the shift number"))
+    caesar(text, shift, direction)
