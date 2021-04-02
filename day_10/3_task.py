@@ -4,6 +4,11 @@ FEB = 2
 
 
 def get_quarter_by_month(month: int):
+    """
+    retreive the quarter of a month. ex: Jan is in Q1, April in Q2, ect
+    :param month: valid int month
+    :return: quarter that belongs to that month
+    """
     if month not in range(1, 13):
         raise ValueError(f"invalid month <{month}>")
     if month in range(1, 4):
@@ -23,6 +28,11 @@ print("#" * 50)
 
 
 def is_leap_year(year):
+    """
+    check if the year is leap or not
+    :param year: year in geo
+    :return: True if the year is leap otherwise False
+    """
     if year % 4 == 0:
         if (year % 100) == 0:
             if (year % 400) == 0:
@@ -40,6 +50,12 @@ def is_leap_year(year):
 
 
 def days_in_month(year, month):
+    """
+    get how many days in month in a year
+    :param year: year as int
+    :param month: valid month
+    :return: number of days in a month. if year is leap then Feb is 29 days
+    """
     if not (1 <= month <= 12):
         raise ValueError(f"Invalid month <{month}>")
     month_days = {
