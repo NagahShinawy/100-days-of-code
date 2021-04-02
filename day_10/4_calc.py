@@ -23,15 +23,23 @@ def calculator():
     while repeat:
         second = int(input("Enter next number number : "))
         operator = input("Enter Operator (+, -, *, / )")
-        total = operations[operator](first, second)
-        if total is False:
+        answer = operations[operator](first, second)
+        if answer is False:
             print("Can not div by Zero Try again")
             continue
-        options = input(f" {first} {operator} {second}  = '{total}', 'yes' or 'no'")
-        if options == "no":
-            print("Final result is '{}'".format(total))
+        option = input(
+            f" {first} {operator} {second}  = '{answer}', 'y' to continue or 'no' to restart, ex: to exists"
+        )
+        if option == "n":
+            print("result '{}'".format(answer))
             repeat = False
-        first = total
+            calculator()  # restart calc
+        elif option == "ex":
+            print("Existing the calculator with final result '{}'".format(answer))
+            repeat = False
+        else:
+            # update first number to be latest answer
+            first = answer
 
 
 calculator()
