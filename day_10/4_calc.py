@@ -19,9 +19,9 @@ def division(a, b):
 def calculator():
     operations = {"+": add, "-": sub, "*": multiply, "/": division}
     repeat = True
-    first = int(input("Enter first number : "))
+    first = float(input("Enter first number : "))
     while repeat:
-        second = int(input("Enter next number number : "))
+        second = float(input("Enter next number number : "))
         operator = input("Enter Operator (+, -, *, / )")
         answer = operations[operator](first, second)
         if answer is False:
