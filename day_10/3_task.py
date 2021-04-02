@@ -40,6 +40,8 @@ def is_leap_year(year):
 
 
 def days_in_month(year, month):
+    if not (1 <= month <= 12):
+        raise ValueError(f"Invalid month <{month}>")
     month_days = {
         1: 31,
         2: 28,
@@ -62,3 +64,4 @@ def days_in_month(year, month):
 print(days_in_month(year=2000, month=3))
 print(days_in_month(year=2000, month=2))
 print(days_in_month(year=2022, month=12))
+print(days_in_month(year=2022, month=13))
