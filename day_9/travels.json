@@ -1,0 +1,28 @@
+[
+    {
+        "country": "France",
+        "visits": 12,
+        "cities": [
+            "Paris",
+            "Lille",
+            "Dijon"
+        ]
+    },
+    {
+        "country": "Germany",
+        "visits": 5,
+        "cities": [
+            "Paris",
+            "Lille",
+            "Dijon"
+        ]
+    },
+    {
+        "country": "Egypt",
+        "visits": 8,
+        "cities": [
+            "Cairo",
+            "Giza"
+        ]
+    }
+]
