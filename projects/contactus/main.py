@@ -13,7 +13,9 @@ def notification():
     from win10toast import ToastNotifier
 
     ToastNotifier().show_toast(
-        "Logs", "Logs Saved Please Check it", duration=3,
+        "Logs",
+        "Logs Saved Please Check it",
+        duration=3,
     )
 
 
