@@ -1,2 +1,27 @@
-local scope is withing functions
+1- local scope is withing functions
+2- there is no block scope
 
+# ###########################
+
+There are 2 of SCOPES
+    1- block scope: you can access variables within (if, while, for)
+    2- function scope: variable within function (you can use LOCAL, GLOBAL variable like we used in "scope.py"
+
+
+
+##############################
+
+SyntaxError: name 'bonus' is assigned to before global declaration
+
+def update_salary_global_scope():
+    global salary
+    bonus = 0
+    global bonus
+    bonus += 5
+    salary = 8000
+    print("Salary Within Function", salary)
+    print("inside", bonus)
+
+
+# error: because now confused between local var, global var,!! . you tell python to take care about var that is local
+and global in the same time.
