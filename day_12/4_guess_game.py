@@ -16,7 +16,7 @@ REMAINING = REMAINING_HARD
 RESULT = {"lose": "Lose", "win": "Win"}
 
 
-def get_computer_number():
+def get_computer_number() -> int:
     return random.randint(1, 100)
 
 
@@ -38,6 +38,12 @@ def validate_level() -> str:
 
 
 def play_guess_game(computernumber, usernum):
+    """
+    check if number by user matches computernumber
+    :param computernumber: correct answer
+    :param usernum: guess number bu yser
+    :return:
+    """
     _ATTEMPTS = ATTEMPTS
     is_win = True
     while computernumber != usernum:
@@ -58,8 +64,8 @@ def play_guess_game(computernumber, usernum):
 
 
 computer_number = get_computer_number()
-user_num = validate_number()
 validated_level = validate_level()
+user_num = validate_number()
 
 if validated_level == "easy":
     ATTEMPTS = 10
