@@ -25,3 +25,5 @@ def update_salary_global_scope():
 
 # error: because now confused between local var, global var,!! . you tell python to take care about var that is local
 and global in the same time.
+
+# Type error: You trying do something with wrong data type
