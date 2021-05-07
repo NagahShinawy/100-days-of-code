@@ -27,3 +27,18 @@ def update_salary_global_scope():
 and global in the same time.
 
 # Type error: You trying do something with wrong data type
+
+
+##############################################################
+
+hold alt + shift then drag mouse to update all in once
+
+x
+y
+z
+
+then hold alt + shift and put the pointer at the beginning
+then you should able to update all 3 line at the same time.
+
+
+===============================================================
