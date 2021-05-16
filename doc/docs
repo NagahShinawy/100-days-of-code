@@ -42,3 +42,7 @@ then you should able to update all 3 line at the same time.
 
 
 ===============================================================
+Procedural Programming: Just like coffee machine day 15 (using functions)
+
+OOP: try to model real world obj (what obj has" attr", what obj does" methods")
+- method: is not floating function, it is attached to a model (obj).
