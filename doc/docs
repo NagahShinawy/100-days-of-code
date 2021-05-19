@@ -67,3 +67,13 @@ higher order function: is function can work with another function
 
 A function is called Higher Order Function if it contains other functions as a parameter or returns a function as an output
 i.e, the functions that operate with another function are known as Higher order Functions
+
+=========================
+
+timmy = Turtle()
+timmy.color = green  ==> state  (attributes)
+timmy.move() ==> action (method)
+
+==========================
+database
+https://opentdb.com/api_config.php
