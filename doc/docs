@@ -68,6 +68,18 @@ higher order function: is function can work with another function
 A function is called Higher Order Function if it contains other functions as a parameter or returns a function as an output
 i.e, the functions that operate with another function are known as Higher order Functions
 
+def create_adder(x):
+    def adder(y):
+        return x + y
+
+    return adder
+
+
+add_15 = create_adder(15)
+
+print(add_15(10))
+
+
 =========================
 
 timmy = Turtle()
@@ -77,3 +89,51 @@ timmy.move() ==> action (method)
 ==========================
 database
 https://opentdb.com/api_config.php
+
+============================
+
+TypeError: range() does not take keyword arguments
+
+
+range() takes 1 positional argument and two optional arguments,
+and interprets these arguments differently depending on how many arguments you passed in.
+
+############################################
+
+with open("scores.txt", "r") as f:
+    content = f.read()
+
+print(content, type(content))  # content is str type
+
+
+# write(w) mode ==> override content
+# if file does not exist , it will be created
+with open("scores.txt", "w") as f:
+    f.write("PHP for web development")
+
+
+# append(a) mode ==> append content
+# if file does not exist , it will be created
+with open("scores.txt", "w") as f:
+    f.write("PHP for web development")
+
+
+###################################################
+- ABSOLUTE PATH: path always relative to root
+
+- /root/work/project/talk.ppt   ===> ABSOLUTE PATH
+
+- we are in dir project so, RELATIVE PATH for ppt is : ./talk.ptt
+
+- ./ : means look in the current folder
+
+- if we are in the work dir so ppt RELATIVE PATH ./project/talk.ppt
+
+- ./ : means replace '.' with current working dir
+
+- if we are in project dir and we need to go to file in the work dir, so ===> ../project/FILE_IN_WORK_DIR
+
+-  []./ ====> means current, 0 step up
+-  [.]./ means one step up
+
+-  [..]./ means 2 steps up  ====> ../../ means 2 steps up

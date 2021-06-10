@@ -88,19 +88,25 @@ class SetUpTurtles:
 
     def create(self):
         for competitor in self.data:
-            comp = Turtle(shape=competitor["shape"])
-            comp.penup()
-            comp.color(competitor["color"])
-            comp.goto(x=competitor["position"]["x"], y=competitor["position"]["y"])
-            self.competitors.append(comp)
+            self.add_competitor(competitor)
         return self.competitors
+
+    def add_competitor(self, competitor):
+        comp = Turtle(shape=competitor["shape"])
+        comp.penup()
+        comp.color(competitor["color"])
+        comp.goto(x=competitor["position"]["x"], y=competitor["position"]["y"])
+        self.competitors.append(comp)
 
 
 def start():
 
     # ########## setup screen #############
+
     screen = Screen()
     screen.setup(width=500, height=400)
+    screen.bgcolor("black")
+    screen.title("Race")
     user_bet = screen.textinput(
         title="Make Your Bet", prompt="Type The Color That You Think It Will Win? : "
     )
