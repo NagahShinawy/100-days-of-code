@@ -6,7 +6,7 @@ import os
 LETTER_PATH = "./inputs/letters/starting_letter.txt"
 NAMES_PATH = "./inputs/names/names.txt"
 SENDING_MAIL_PATH = "./output/readyToSend"
-NOTIFICATION = "SENDING MAIL TO '{name}'"
+NOTIFICATION = "MAIL SENT TO '{name}'"
 
 
 def read_letter() -> str:
@@ -35,7 +35,7 @@ def send_mail(names: list, body: str) -> None:
     :return: None
     """
     for name in names:
-        mailpath = os.path.join(SENDING_MAIL_PATH, name + ".txt")
+        mailpath = os.path.join(SENDING_MAIL_PATH, f"letter_for_{name}.txt")
         with open(mailpath, "w") as fout:
             fout.write(body.replace("[name]", name))
         print(NOTIFICATION.format(name=name))
