@@ -137,3 +137,27 @@ with open("scores.txt", "w") as f:
 -  [.]./ means one step up
 
 -  [..]./ means 2 steps up  ====> ../../ means 2 steps up
+
+==========================================================================================
+how-to-implement-a-subscriptable-class-in-python-subscriptable
+
+https://stackoverflow.com/questions/11469025/how-to-implement-a-subscriptable-class-in-python-subscriptable-class-not-subsc
+
+class Fruit:
+    def __init__(self, args: dict):
+        for k in args:
+            setattr(self, k, args[k])  # self.apple = 4 & self.banana = 1
+
+    def __getitem__(self, item):  # fruit['apple'] ==> item is apple
+        return getattr(self, item)  # self.item =  self.apple
+
+
+fruit = Fruit(fruits_dict)
+print(fruit)
+print(fruit["apple"])  # 4
+print(fruit.apple)  # 4
+
+
+==========================================================================================
+- dataframe : 2d data structure (whole table)
+- series: single col with its values ( 1 dimension data structure) ==> just like list

@@ -4,6 +4,7 @@ created by Nagaj at 19/06/2021
 import csv
 from collections import namedtuple
 from prettytable import PrettyTable
+import pandas as pd
 
 
 WEATHER_COLS = ["DAY", "TEMP", "CONDITION"]
@@ -43,4 +44,8 @@ def main():
 
 if __name__ == "__main__":
     # main()
-    printcsv(readcsv("./weather_data.csv"))
+    # printcsv(readcsv("./weather_data.csv"))
+    df = pd.read_csv("./weather_data.csv")
+    print(df)
+    print("#" * 100)
+    print(df["temp"])  # get single column
