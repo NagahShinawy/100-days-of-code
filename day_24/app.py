@@ -10,7 +10,7 @@ SENDING_MAIL_PATH = "./output/readyToSend"
 NOTIFICATION = "MAIL SENT TO '{name}'"
 
 
-class FileOperation:
+class File:
     def __init__(self, path):
         self.path = path
 
@@ -49,8 +49,8 @@ class Mail:
 
 
 if __name__ == "__main__":
-    namef = FileOperation(path=NAMES_PATH)
-    mailtemplate = FileOperation(path=LETTER_PATH).content
+    namef = File(path=NAMES_PATH)
+    mailtemplate = File(path=LETTER_PATH).content
 
     for name in namef:
         body = mailtemplate.replace("[name]", name)
