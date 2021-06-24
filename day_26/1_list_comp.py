@@ -68,7 +68,29 @@ print(list(odds2))
 
 evens = filter(find_even, numbers)
 print(list(evens))
-#
-# def test_squares():
-#     for i in range(len(numbers)):
-#         assert numbers[0] ** 2 == squares[0]
+
+
+def get_lines(file):
+    with open(file) as f:
+        all_lines = f.readlines()
+        if not all_lines[-1].endswith("\n"):
+            all_lines[-1] = all_lines[-1] + "\n"
+        return all_lines
+
+
+lines1 = get_lines("file1.txt")
+lines2 = get_lines("file2.txt")
+if len(lines1) < len(lines2):
+    lines = lines1
+    other = lines2
+else:
+    lines = lines2
+    other = lines1
+common = [int(line) for line in lines if line in other]
+
+print(common)
+
+
+def test_squares():
+    for i in range(len(numbers)):
+        assert numbers[0] ** 2 == squares[0]
