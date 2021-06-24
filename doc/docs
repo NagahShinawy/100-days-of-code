@@ -171,3 +171,11 @@ counts = {
 }
 counts = sorted(counts.items(), key=lambda item: item[-1])
 print(counts)
+
+
+==========================================================================================
+what is list comprehension: generate new list from iterable/sequence
+why : code more faster and shorter, easy to read
+
+- sequence : something has index, slice, length ===> list, string, range, tuple
+- sequence means has INDEX, specific order
