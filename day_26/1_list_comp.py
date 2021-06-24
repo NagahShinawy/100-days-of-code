@@ -1,8 +1,8 @@
 """
 created by Nagaj at 24/06/2021
 """
+import random
 from string import punctuation
-
 
 numbers = [5, 6, 7]
 
@@ -34,6 +34,7 @@ evens = [num for num in range(1, 11) if num % 2 == 0]
 
 print(evens)
 
+
 # using filter
 
 
@@ -47,7 +48,6 @@ def find_odd(number: int):
 
 evens = filter(find_even, range(1, 11))
 print(list(evens))
-
 
 names = ["angela", "james", "John Smith", "leon", "Jolia", "alex"]
 to_upper = [name.upper() for name in names if len(name) > 5]
@@ -94,3 +94,86 @@ print(common)
 def test_squares():
     for i in range(len(numbers)):
         assert numbers[0] ** 2 == squares[0]
+
+
+countries = {
+    "egypt": ["Alex", "Cairo", "Giza"],
+    "sa": ["Riyad", "Makka", "Dammam", "Madina", "Dadda"],
+    "usa": ["Dubai", "Abu dhabi"],
+}
+
+counts = {country: len(cities) for country, cities in countries.items()}
+
+print(counts)
+
+names = ["John", "James", "Leon", "Smith", "Sara", "Angela", ""]
+
+names_length = {name: len(name) for name in names if name}
+print(names_length)
+
+authors = {"bob": [40, 60], "james": [10, 80, 30, 50], "john": [15, 35, 70, 30]}
+# result = {
+#     "bob": 120,
+#     "james": 120,
+#     "john": 120
+# }
+
+revenue = {author: sum(prices) for author, prices in authors.items()}
+
+print(sorted(revenue.items(), key=lambda author: author[-1]))
+print(
+    {
+        author: sum(prices)
+        for author, prices in sorted(authors.items(), key=lambda author: sum(author[1]))
+    }
+)
+
+print("#" * 100)
+
+authors = {
+    "bob": [{"title": "clean code", "price": 30}, {"title": "clean ach", "price": 50}],
+    "james": [{"title": "flask", "price": 10}, {"title": "django", "price": 90}],
+}
+
+
+def calc_total_revenue(books: list) -> float:
+    total = 0
+    for book in books:
+        total += book["price"]
+    return total
+
+
+total_revenue = {author: calc_total_revenue(books) for author, books in authors.items()}
+
+print(total_revenue)
+
+students = ["john", "james", "sara"]
+
+scores = {student: random.randint(1, 100) for student in students}
+
+print(scores)
+
+passed_students = {student: score for student, score in scores.items() if score >= 60}
+
+print(passed_students)
+
+print("#" * 100)
+
+
+def exclude_punctuation(original_text: str):
+    new_text = ""
+    for char in original_text:
+        if char not in punctuation:
+            new_text += char
+    return new_text
+
+
+sentence = "What is the Airspeed Velocity of an Unladen Swallow?"
+
+sentence = exclude_punctuation(sentence)
+
+words = sentence.split()
+
+count_letters = {word: len(word) for word in words if word and word not in punctuation}
+
+print(count_letters)
