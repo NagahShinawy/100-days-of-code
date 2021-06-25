@@ -2,6 +2,7 @@
 created by Nagaj at 24/06/2021
 """
 import random
+from pprint import pprint
 from string import punctuation
 
 numbers = [5, 6, 7]
@@ -177,3 +178,31 @@ words = sentence.split()
 count_letters = {word: len(word) for word in words if word and word not in punctuation}
 
 print(count_letters)
+
+print("#" * 100)
+weather_c = {
+    "Monday": 12,
+    "Tuesday": 14,
+    "Wednesday": 15,
+    "Thursday": 14,
+    "Friday": 21,
+    "Saturday": 22,
+    "Sunday": 24,
+}
+# from fahrenheit to celsius
+# (temp_c * 9/5) + 32 = temp_f
+weather = {
+    day: {"celsius": celsius, "fahrenheit": (celsius * 9 / 5) + 32}
+    for day, celsius in weather_c.items()
+}
+
+pprint(weather)
+
+weather = [
+    {"day": day, "temps": {"celsius": celsius, "fahrenheit": (celsius * 9 / 5) + 32}}
+    for day, celsius in weather_c.items()
+]
+
+print("#" * 100)
+
+pprint(weather)
