@@ -256,3 +256,19 @@ loop through dataframe
     # (index, value) but don't use unpacking. index is NOT actual value. it used to access the value
     for index, row in students_df.iterrows():
         print(index + 1, *row, end=".\n")
+
+
+==========================================================================================
+function inputs:
+1- required
+2- default
+3- many args. *args [ or or more]. pass more inputs to the function
+4- keyword args. **kwargs many keyword inputs to the function
+**********************
+def write(self, arg, move=False, align="left", font=("Arial", 8, "normal")):
+arg: text must
+move, align, font are optionals with default values, you can update them
+
+check day_27/main.py for EXAMPLES
+
+==========================================================================================
