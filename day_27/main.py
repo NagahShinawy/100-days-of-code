@@ -88,10 +88,92 @@ def my_fuc(a, b, c):
     print(a, b, c)
 
 
+def breakline(symbol="#", times=50):
+    print(symbol * times)
+
+
 def add(*args: float):
     # unlimited positional arguments
     # packing(collect) all values to tuple (args)
     return sum(args)
+
+
+def create_user(username, password, email):
+    print(f"Creating user '{username}' with email '{email}'")
+
+
+def post(**kwargs):
+    # kwargs: many keyword arguments
+    data = kwargs
+    username = data.get("username")
+    password = data.get("password")
+    email = data.get("email")
+    if not all([username, password, email]):
+        raise ValueError("Bad request, missing data")
+    return {"data": data}, 201
+
+
+def create(username, password, email, **kwargs):
+    data = {"username": username, "password": password, "email": email}
+    print(f"creating user with username '{username}'")
+    dob = kwargs.get("dob")
+    phone = kwargs.get("phone")
+    address = kwargs.get("address")
+    if dob:
+        data["dob"] = dob
+
+    if phone:
+        data["phone"] = phone
+
+    if address:
+        data["address"] = address
+
+    return data
+
+
+def send_mail(from_, to, subject, body, **kwargs):
+    email_info = {
+        "from": from_,
+        "to": to,
+        "subject": subject,
+        "body": body,
+    }
+
+    cc = kwargs.get("cc")
+    attachments = kwargs.get("attachments")
+
+    if cc:
+        email_info["cc"] = cc
+
+    if attachments:
+        email_info["attachments"] = attachments
+
+    return email_info
+
+
+def calc(n, *args, **kwargs):
+    # kwargs: is dic
+    print(args)
+    pass
+
+
+def calculate(number, **kwargs):
+    print(kwargs)
+    number += kwargs.get("add", 0)  # return 0 if 'add' not exist
+    number *= kwargs.get("multiply", 1)  # # return 1 if 'multiply' not exist
+    print(number)
+
+
+class Car:
+    def __init__(self, **kwargs):
+        self.make = kwargs.get("make")
+        self.model = kwargs.get("model")
+        self.price = kwargs.get("price")
+        self.color = kwargs.get("color")
+        self.seats = kwargs.get("seats")
+
+    def __repr__(self):
+        return f"Car(make={self.make}, model={self.model}, price={self.price}, color={self.color}, seats={self.seats})"
 
 
 if __name__ == "__main__":
@@ -137,6 +219,41 @@ if __name__ == "__main__":
         )
     )
 
+    # refer to arguments by position
     print(add(5, 6, 10))
     print(add(7, 3))
     # refer to arguments by name not position
+    # create unlimited kwargs
+    user = {"username": "john", "password": "123456", "email": "john@test.com"}
+    create_user(**user)  # unpacking values
+
+    print(
+        post(
+            username="james",
+            password="pass@word",
+            email="james@tes.com",
+            dob="2012-04-09",
+        )
+    )
+
+    # print(post(username="james", password="pass@word",))
+
+    print(create("leon", "123456", "leon@test.com", phone="+201222222222"))
+
+    email = send_mail(
+        "james.com",
+        "Thomas.com",
+        "access to db",
+        "please need access to dev db",
+        cc=["manager.com"],
+    )
+
+    print(email)
+    # calc(2, x=80)  # TypeError: calc() takes 0 positional arguments but 1 was given
+    # calc(4, add=7, "ttst")  # SyntaxError: positional argument follows keyword argument
+    calculate(3, add=6, multiply=5)
+    breakline(symbol="*", times=100)
+    bmw = Car(make="bmw", price=100, model=2021)
+    nissan = Car(make="Nissan", color="black", seats=4)
+    print(bmw)
+    print(nissan)
