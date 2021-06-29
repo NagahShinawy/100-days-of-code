@@ -272,3 +272,26 @@ move, align, font are optionals with default values, you can update them
 check day_27/main.py for EXAMPLES
 
 ==========================================================================================
+
+# best Practices: except clause
+# When inside an except clause, you might want to, for example, log that a specific type of error happened, and then re-raise.
+ The best way to do this while preserving the stack trace is to use a bare raise statement. For example:
+#
+# logger = logging.getLogger(__name__)
+#
+# try:
+#     do_something_in_app_that_breaks_easily()
+# except AppError as error:
+#     logger.error(error)
+#     raise                 # just this!
+#     # raise AppError      # Don't do this, you'll lose the stack trace!
+
+
+==========================================================================================
+tkinter layout managers ==> pack, grid, place
+
+1- pack: by default starting adding widget from top and pack every widget below previous one
+
+= first you create your widget[Entry, Label, Button , ..] then you HAVE to add it to screen using one of layout
+managers[pack, grid, place]. else widget will not be shown.
+
