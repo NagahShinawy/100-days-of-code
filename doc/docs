@@ -295,3 +295,11 @@ tkinter layout managers ==> pack, grid, place
 = first you create your widget[Entry, Label, Button , ..] then you HAVE to add it to screen using one of layout
 managers[pack, grid, place]. else widget will not be shown.
 
+- grid: is relative to other components
+
+- you can NOT mix grid and pack in the same tkinter app
+
+
+
+==========================================================================================
+you can use padding x & y by ==> window.config(padx=00, pady=00)
