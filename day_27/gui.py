@@ -26,7 +26,7 @@ def main():
     btn.grid(row=0, column=2)
     btn2 = tkinter.Button(text="Attach")
     btn2.grid(row=1, column=1, padx=50)  # padding between components
-    btn2.config(padx=30, pady=20)  # padding in the item itself between item text
+    btn2.config(padx=30, pady=200)  # padding in the item itself between item text
     # tkinter.Button(text="ok").grid(row=1, column=2)
     tkinter.Entry().grid(row=2, column=3)
     # tkinter.Label().grid(row=2, column=3)
