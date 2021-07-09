@@ -303,3 +303,68 @@ managers[pack, grid, place]. else widget will not be shown.
 
 ==========================================================================================
 you can use padding x & y by ==> window.config(padx=00, pady=00)
+
+==============================  Canvas ===================================================
+Canvas: allow you to layer things one on top of the others
+ex: add image to screen and layout text on top of that
+
+==========================================================================================
+
+Dynamic Typing
+
+Python is a dynamically typed language.
+This means that the Python interpreter does type checking only as code runs,
+and the type of a variable is allowed to change over its lifetime.
+
+
+>>> if False:
+...     1 + "two"  # This line never runs, so NO TypeError is raised
+... else:
+...     1 + 2
+...
+3
+>>> 1 + "two"  # Now this is type checked
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+
+----------------------
+
+In this next example, you see if variables can change type:
+
+>>> thing = "Hello"
+>>> type(thing)
+<class 'str'>
+
+>>> thing = 28.1
+>>> type(thing)
+<class 'float'>
+
+type() returns the type of an object.
+
+OBJ TYPE IS CHANGED BASED ON ITS VALUE
+things ==> str, then things ==> float
+
+- YOU DON'T HAVE TO USE SOMETHING LIKE int x , bool is_gender , .....
+
+- salary one time float, then get it as int, then show it as string on email, gui, text file
+- so, type of salary is changed through the application, and python interpreter does not check salary type unless
+code that use salary run
+----------------------------------------
+
+= CHANGE MONTH TYPE FROM int TO STR [ONLY IF CODE RUN(ONLY IF , if is True)]
+= CHANGE TYPE FROM INT TO STR
+- month = 5 (int)
+if month < 10:
+   month = f"0{month}"  (str)  # you dynamically change type from int to str
+
+- python allow you to change variable data type just by assigning it to different type of value
+
+==========================================================================================
+
+Python is strongly, dynamically typed.
+
+STRONG typing means that the type of a value doesn't change in unexpected ways.
+A string containing only digits doesn't magically become a number, as may happen in Perl. Every change of type requires an explicit conversion.
+
+DYNAMIC typing means that runtime objects (values) have a type, as opposed to static typing where variables have a type.
+
